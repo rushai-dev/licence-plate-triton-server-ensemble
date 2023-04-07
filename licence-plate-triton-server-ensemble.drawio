@@ -1,23 +1,41 @@
-<mxfile host="app.diagrams.net" modified="2023-04-07T14:58:38.523Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="yXIurvwpJqLsfjHIt4MT" version="21.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-07T15:05:54.712Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="bjSOmfdU4jjjAawOkYt8" version="21.1.2" type="github">
   <diagram name="Page-1" id="_gFGdC1oJcc4WMkTPQVc">
     <mxGraphModel dx="954" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="80" width="360" height="390" as="geometry" />
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="210" y="80" width="260" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="VX1kqERT5CJ1XiSCOBTQ-2" target="VX1kqERT5CJ1XiSCOBTQ-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="VX1kqERT5CJ1XiSCOBTQ-2" value="preprocess" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="280" y="120" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="VX1kqERT5CJ1XiSCOBTQ-3" target="VX1kqERT5CJ1XiSCOBTQ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="VX1kqERT5CJ1XiSCOBTQ-3" value="yolo_detection" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="280" y="230" width="120" height="60" as="geometry" />
+          <mxGeometry x="280" y="260" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="VX1kqERT5CJ1XiSCOBTQ-4" value="optical_character_recognition" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="250" y="340" width="180" height="60" as="geometry" />
+          <mxGeometry x="250" y="390" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-7" value="&lt;h1&gt;Ensemble&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="280" y="40" width="120" height="40" as="geometry" />
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-7" value="&lt;h1 style=&quot;font-size: 12px;&quot;&gt;ensemble&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="280" y="90" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-10" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://artwork.lfaidata.foundation/projects/onnx/icon/color/onnx-icon-color.png;" vertex="1" parent="1">
+          <mxGeometry x="374" y="300" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-11" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="376.5" y="160" width="35" height="38.32" as="geometry" />
+        </mxCell>
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-12" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="410" y="431.68" width="35" height="38.32" as="geometry" />
+        </mxCell>
+        <mxCell id="VX1kqERT5CJ1XiSCOBTQ-15" value="[&quot;เลขทะเบียน&quot;, &quot;จังหวัด&quot;, x1, y1, x2, y2]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="225" y="464" width="230" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
