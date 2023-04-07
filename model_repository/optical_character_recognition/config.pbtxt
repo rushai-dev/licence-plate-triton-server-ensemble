@@ -1,0 +1,25 @@
+name: "optical_character_recognition"
+backend: "python"
+max_batch_size: 64 
+input [
+    {
+        name: "INPUT_0"
+        data_type: TYPE_FP32
+        dims: [ -1, -1 ]
+    },
+    {
+        name: "INPUT_1"
+        data_type: TYPE_UINT8
+        dims: [ -1 ]
+    }
+]
+ 
+output [
+    {
+        name: "OUTPUT_0"
+        data_type: TYPE_STRING
+        dims: [ -1 ]
+    }
+]
+
+instance_group [{ kind: KIND_CPU }]
