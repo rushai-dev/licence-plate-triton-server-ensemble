@@ -36,14 +36,11 @@ class TritonPythonModel:
           * model_version: Model version
           * model_name: Model name
         """
-
+        
         self.conf_thresold=0.25
 
         self.input_width=640
         self.input_height=640
-        
-        self.image_width=640
-        self.image_height=640
 
         self.reader = easyocr.Reader(['th'] ,gpu=True)
 
@@ -57,19 +54,20 @@ class TritonPythonModel:
         # Convert Triton types to numpy types
         self.output0_dtype = pb_utils.triton_string_to_numpy(
             output0_config['data_type'])
-
+        
+        
     def preprocess(self, image, alpha = 2.0, beta = 90):
-        # Convert color images to black and white images.
+        # แปลงภาพสีเป็นภาพขาว-ดำ
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        
-        
-        # Adjust the sharpness of the image.
+
+
+        # ปรับความคมชัดของภาพ
         sharpen_kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
         sharpened = cv2.filter2D(gray, -1, sharpen_kernel)
-        
-        # Adjust the brightness and intensity of the image.
+
+        # ปรับความสว่างและความเข้มของภาพ
         adjusted = cv2.convertScaleAbs(sharpened, alpha=alpha, beta=beta)
-            
+
         return adjusted
 
     def compute_iou(self, box, boxes):
@@ -170,6 +168,8 @@ class TritonPythonModel:
 
             img = in_1.as_numpy()
             
+            image_height, image_width, _ = img.shape
+            
             predictions = np.squeeze(in_0.as_numpy()).T
 
             # Filter out object confidence scores below threshold
@@ -183,7 +183,7 @@ class TritonPythonModel:
             boxes = predictions[:, :4]
 
             #rescale box
-            input_shape = np.array([self.input_width, self.input_height, self.image_width, self.image_height])
+            input_shape = np.array([self.input_width, self.input_height, self.input_width, self.input_height])
             boxes = np.divide(boxes, input_shape, dtype=np.float32)
             boxes *= np.array([image_width, image_height, image_width, image_height])
             boxes = boxes.astype(np.int32)
@@ -194,7 +194,7 @@ class TritonPythonModel:
 
             image = Image.open(io.BytesIO(img.tobytes()))
 
-            image = preprocess(image=np.array(image)[y1:y2, x1:x2])
+            image = self.preprocess(image=np.array(image)[y1:y2, x1:x2])
 
             results = self.reader.readtext(image, detail=0)
 
