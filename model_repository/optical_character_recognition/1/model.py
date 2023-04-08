@@ -41,6 +41,9 @@ class TritonPythonModel:
 
         self.input_width=640
         self.input_height=640
+        
+        self.image_width=640
+        self.image_height=640
 
         self.reader = easyocr.Reader(['th'] ,gpu=True)
 
@@ -166,9 +169,6 @@ class TritonPythonModel:
                 return image
 
             img = in_1.as_numpy()
-
-            image_height, image_width, _ = img.shape
-
             
             predictions = np.squeeze(in_0.as_numpy()).T
 
@@ -183,7 +183,7 @@ class TritonPythonModel:
             boxes = predictions[:, :4]
 
             #rescale box
-            input_shape = np.array([self.input_width, self.input_height, image_width, image_height])
+            input_shape = np.array([self.input_width, self.input_height, self.image_width, self.image_height])
             boxes = np.divide(boxes, input_shape, dtype=np.float32)
             boxes *= np.array([image_width, image_height, image_width, image_height])
             boxes = boxes.astype(np.int32)
