@@ -193,12 +193,13 @@ class TritonPythonModel:
             x1, y1, x2, y2 = self.xywh2xyxy(boxes[indices])[0]
 
             image = Image.open(io.BytesIO(img.tobytes()))
-
-            image = self.preprocess(image=np.array(image)[y1:y2, x1:x2])
-
-            results = self.reader.readtext(image, detail=0)
-
-            str_out = np.array([results[0], results[1], x1, y1, x2, y2])
+            
+            try:
+                image = self.preprocess(image=np.array(image)[y1:y2, x1:x2])
+                results = self.reader.readtext(image, detail=0)
+                str_out = np.array([results[0], results[1], x1, y1, x2, y2])
+             except:
+                str_out = np.array([None, None, x1, y1, x2, y2])
 
             out_tensor_0 = pb_utils.Tensor("OUTPUT_0",
                                            str_out.astype(output0_dtype))
